@@ -19,6 +19,8 @@ import puntoRed from "./images/punto-red.png";
 import ContactMethod from "./components/ContactMethod";
 import PaymentChannels from "./components/PaymentChannels";
 import Footer from "./components/Footer";
+import falabellaLogo from "./images/falabella-logo.png";
+import cycLogo from "./images/cyc-logo.png";
 
 const theme = createTheme({
     typography: {
@@ -78,13 +80,12 @@ const App = () => {
         <React.StrictMode>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Box
-                    sx={{
-                        height: "20vh",
-                        backgroundImage: `linear-gradient(35deg, #abd73c 0%, #b8e63c 73%, #c4f53c 100%);`,
-                    }}
-                >
+                <Box>
                     <Container sx={{ height: "100vh" }}>
+                        <Box sx={{ display: "flex", justifyContent: "flex-start", gap: '2rem', p: "0.5rem" }}>
+                            <img style={{ width: "50px" }} src={cycLogo} alt="images1" />
+                            <img style={{ width: "50px", borderRadius: "10px" }} src={falabellaLogo} alt="images1" />
+                        </Box>
                         <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
                             <Box>
                                 <img style={{ width: "15rem" }} src={Image3D} alt="images1" />
