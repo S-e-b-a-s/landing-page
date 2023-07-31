@@ -4,12 +4,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Image3D from "./images/icon.png";
+import Image3D from "./images/hand3d.png";
 import bancoFalabella from "./images/banco-falabella.png";
 import falabella from "./images/falabella.png";
 import pse from "./images/pse.png";
@@ -21,6 +17,11 @@ import PaymentChannels from "./components/PaymentChannels";
 import Footer from "./components/Footer";
 import falabellaLogo from "./images/falabella-logo.png";
 import cycLogo from "./images/cyc-logo.png";
+import phoneIcon from "./images/phone.gif";
+import emailIcon from "./images/email.gif";
+import speechBubble from "./images/speech-bubble.gif";
+import locationIcon from "./images/google-maps.gif";
+import letterX from "./images/cross.png";
 
 const theme = createTheme({
     typography: {
@@ -82,17 +83,27 @@ const App = () => {
                 <CssBaseline />
                 <Box>
                     <Container sx={{ height: "100vh" }}>
-                        <Box sx={{ display: "flex", justifyContent: "flex-start", gap: '2rem', p: "0.5rem" }}>
-                            <img style={{ width: "50px" }} src={cycLogo} alt="images1" />
-                            <img style={{ width: "50px", borderRadius: "10px" }} src={falabellaLogo} alt="images1" />
+                        <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "0.5rem", p: "0.5rem" }}>
+                            <img style={{ width: "30px" }} src={cycLogo} alt="images1" />
+                            <img style={{ width: 30, height: 30 }} src={letterX} alt="images1" />
+                            <img style={{ width: "30px", borderRadius: "10px" }} src={falabellaLogo} alt="images1" />
                         </Box>
                         <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
                             <Box>
                                 <img style={{ width: "15rem" }} src={Image3D} alt="images1" />
                             </Box>
-                            <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%" }}>
-                                <Typography sx={{ fontWeight: "500" }} variant="h5" component="div" gutterBottom>
-                                    C&C y Falabella: Soluciones financieras para tus compras
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    width: "100%",
+                                    gap: "1rem",
+                                }}
+                            >
+                                <Typography sx={{ fontWeight: "500", textAlign: "center" }} variant="h5" component="div" gutterBottom>
+                                    ¡Conéctate con CYC y Falabella! Descubre Nuestros Canales de Comunicación
                                 </Typography>
                                 <Typography sx={{ fontWeight: 400 }} variant="subtitle2" component="div" gutterBottom>
                                     C&C y Falabella se unen para ofrecerte una solución financiera para tus productos. Te invitamos a utilizar el canal de comunicación de
@@ -101,7 +112,8 @@ const App = () => {
                             </Box>
                         </Box>
                         <Box sx={{ display: "flex", flexDirection: "column", flexWrap: "wrap", justifyContent: "space-evenly", pt: "2rem", gap: "25px" }}>
-                            <ContactMethod
+                            
+                            {/* <ContactMethod
                                 Icon={PhoneInTalkIcon}
                                 text="Comunicate con un asesor especializado en Bogota al número 601 - 7461174"
                                 link="tel:+16017461174"
@@ -120,6 +132,22 @@ const App = () => {
                                 Icon={LocationOnIcon}
                                 text="Si quieres Conocernos puedes acercarte a nuestras instalaciones"
                                 link="https://www.google.com/maps/place/C%26C+Services+S.A.S./@4.6033324,-74.0684109,15z/data=!4m6!3m5!1s0x8e3f99a3a6d494ff:0x14a75d64ba24d03c!8m2!3d4.6033324!4d-74.0684109!16s%2Fg%2F11fxcdjnbv?entry=ttu"
+                            /> */}
+                            <ContactMethod text="Comunicate con un asesor especializado en Bogota al número 601 - 7461174" link="tel:+16017461174" gif={phoneIcon} />
+                            <ContactMethod
+                                text="Escribenos por correo electronico comunicacionesprecast@cyc-bpo.com"
+                                link="mailto:comunicacionesprecast@cyc-bpo.com"
+                                gif={emailIcon}
+                            />
+                            <ContactMethod
+                                text="Si te queda mas facil, contamos con agentes especializados en nuestro canal de WhatsApp"
+                                link="tel:+16017461174"
+                                gif={speechBubble}
+                            />
+                            <ContactMethod
+                                text="Si quieres Conocernos puedes acercarte a nuestras instalaciones"
+                                link="https://www.google.com/maps/place/C%26C+Services+S.A.S./@4.6033324,-74.0684109,15z/data=!4m6!3m5!1s0x8e3f99a3a6d494ff:0x14a75d64ba24d03c!8m2!3d4.6033324!4d-74.0684109!16s%2Fg%2F11fxcdjnbv?entry=ttu"
+                                gif={locationIcon}
                             />
                         </Box>
                         <Box sx={{ py: "3rem" }}>
