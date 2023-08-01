@@ -81,9 +81,27 @@ const App = () => {
         <React.StrictMode>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
-                <Box>
-                    <Container sx={{ height: "100vh" }}>
-                        <Box sx={{ display: "flex", justifyContent: "flex-start", alignItems: "center", gap: "0.5rem", p: "0.5rem" }}>
+                <Box sx={{ padding: "2rem" }}>
+                    <Container
+                        sx={{
+                            border: "1px solid gray",
+                            boxSizing: "border-box",
+                            "@media screen and (min-width: 770px)": {
+                                paddingLeft: "20rem", // Add padding to the left
+                                paddingRight: "20rem", // Add padding to the right
+                            },
+                            // margin: "10rem,",
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                display: "flex",
+                                justifyContent: "flex-start",
+                                alignItems: "center",
+                                gap: "0.5rem",
+                                p: "0.5rem",
+                            }}
+                        >
                             <img style={{ width: "30px" }} src={cycLogo} alt="images1" />
                             <img style={{ width: 30, height: 30 }} src={letterX} alt="images1" />
                             <img style={{ width: "30px", borderRadius: "10px" }} src={falabellaLogo} alt="images1" />
@@ -112,7 +130,6 @@ const App = () => {
                             </Box>
                         </Box>
                         <Box sx={{ display: "flex", flexDirection: "column", flexWrap: "wrap", justifyContent: "space-evenly", pt: "2rem", gap: "25px" }}>
-                            
                             {/* <ContactMethod
                                 Icon={PhoneInTalkIcon}
                                 text="Comunicate con un asesor especializado en Bogota al número 601 - 7461174"
