@@ -5,16 +5,21 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Image3D from "./images/hand3d.png";
+
+// Local Components
+import ContactMethod from "./components/ContactMethod";
+import PaymentChannels from "./components/PaymentChannels";
+import Footer from "./components/Footer";
+import { URLS } from "./components/constants"; // Import constants for URLs
+
+// Images
+import image3D from "./images/hand3d.png";
 import bancoFalabella from "./images/banco-falabella.png";
 import falabella from "./images/falabella.png";
 import pse from "./images/pse.png";
 import appStore from "./images/app-store.png";
 import googlePlay from "./images/google-play.png";
 import puntoRed from "./images/punto-red.png";
-import ContactMethod from "./components/ContactMethod";
-import PaymentChannels from "./components/PaymentChannels";
-import Footer from "./components/Footer";
 import falabellaLogo from "./images/falabella-logo.png";
 import cycLogo from "./images/cyc-logo.png";
 import phoneIcon from "./images/phone.gif";
@@ -41,38 +46,37 @@ const theme = createTheme({
     },
 });
 
+// Constants for Payment Channels' URLs
 const images = [
     {
         src: bancoFalabella,
         alt: "images1",
-        onClick: () =>
-            (window.location.href =
-                "https://www.bancofalabella.com.co/page/beneficios-costo-0?gclid=CjwKCAjwhNWZBhB_EiwAPzlhNtvX0TwtzigugW7npUUZcu091pWQbgWwZJYyLcD38LhJg6Rn2lt4zhoCBX8QAvD_BwE&gclid=CjwKCAjw67ajBhAVEiwA2g_jEJS0V9L2aGjcdmlJqf--WKSDv7WhrFNwiyeTcAY3u6AJPA4qZ6DYdRoCl3EQAvD_BwE&gclsrc=aw.ds&gad=1"),
+        onClick: () => (window.location.href = URLS.bancoFalabella), // Use the constant
     },
     {
         src: falabella,
         alt: "images1",
-        onClick: () => (window.location.href = "https://www.google.com/maps/search/Falabella/@4.5966649,-74.0962685,13z/data=!3m1!4b1?hl=es&entry=ttu"),
+        onClick: () => (window.location.href = URLS.falabellaMaps), // Use the constant
     },
     {
         src: pse,
         alt: "images1",
-        onClick: () => (window.location.href = "https://payment.bancofalabella.com.co/payment/#!/login"),
+        onClick: () => (window.location.href = URLS.pse), // Use the constant
     },
     {
         src: googlePlay,
         alt: "images1",
-        onClick: () => (window.location.href = "https://play.google.com/store/apps/details?id=co.com.bancofalabella.mobile.omc&hl=es_CO&gl=US&pli=1"),
+        onClick: () => (window.location.href = URLS.googlePlay), // Use the constant
     },
     {
         src: appStore,
         alt: "images1",
-        onClick: () => (window.location.href = "https://apps.apple.com/co/app/banco-falabella-colombia/id1150133320"),
+        onClick: () => (window.location.href = URLS.appStore), // Use the constant
     },
     {
         src: puntoRed,
         alt: "images1",
-        onClick: () => (window.location.href = "https://www.google.com/maps/search/Punto+red/@4.5966626,-74.0964403,13z/data=!3m1!4b1?hl=es&entry=ttu"),
+        onClick: () => (window.location.href = URLS.puntoRedMaps), // Use the constant
     },
 ];
 
@@ -84,15 +88,13 @@ const App = () => {
                 <Box sx={{ padding: "2rem" }}>
                     <Container
                         sx={{
-                            border: "1px solid gray",
-                            boxSizing: "border-box",
                             "@media screen and (min-width: 770px)": {
                                 paddingLeft: "20rem", // Add padding to the left
                                 paddingRight: "20rem", // Add padding to the right
                             },
-                            // margin: "10rem,",
                         }}
                     >
+                        {/* Header Section */}
                         <Box
                             sx={{
                                 display: "flex",
@@ -106,71 +108,33 @@ const App = () => {
                             <img style={{ width: 30, height: 30 }} src={letterX} alt="images1" />
                             <img style={{ width: "30px", borderRadius: "10px" }} src={falabellaLogo} alt="images1" />
                         </Box>
-                        <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-around" }}>
-                            <Box>
-                                <img style={{ width: "15rem" }} src={Image3D} alt="images1" />
-                            </Box>
-                            <Box
-                                sx={{
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    justifyContent: "center",
-                                    alignItems: "center",
-                                    width: "100%",
-                                    gap: "1rem",
-                                }}
-                            >
-                                <Typography sx={{ fontWeight: "500", textAlign: "center" }} variant="h5" component="div" gutterBottom>
-                                    ¡Conéctate con CYC y Falabella! Descubre Nuestros Canales de Comunicación
-                                </Typography>
-                                <Typography sx={{ fontWeight: 400 }} variant="subtitle2" component="div" gutterBottom>
-                                    C&C y Falabella se unen para ofrecerte una solución financiera para tus productos. Te invitamos a utilizar el canal de comunicación de
-                                    tu preferencia para obtener más información.
-                                </Typography>
-                            </Box>
+                        {/* Main Content */}
+                        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", my: "2rem" }}>
+                            <img style={{ width: "100%", maxWidth: "15rem" }} src={image3D} alt="images1" />
+                            <Typography variant="h5" component="div" gutterBottom>
+                                ¡C&C y Falabella se unen para tí! Conéctate y Descubre Nuestros Canales de Comunicación
+                            </Typography>
+                            <Typography variant="subtitle2" component="div" gutterBottom>
+                                Te invitamos a utilizar el canal de comunicación de tu preferencia para obtener más información.
+                            </Typography>
                         </Box>
-                        <Box sx={{ display: "flex", flexDirection: "column", flexWrap: "wrap", justifyContent: "space-evenly", pt: "2rem", gap: "25px" }}>
-                            {/* <ContactMethod
-                                Icon={PhoneInTalkIcon}
-                                text="Comunicate con un asesor especializado en Bogota al número 601 - 7461174"
-                                link="tel:+16017461174"
-                            />
+                        {/* Contact Methods */}
+                        <Box sx={{ display: "flex", flexDirection: "column", gap: "25px", textAlign: "center", my: "2rem" }}>
+                            {/* Each ContactMethod component represents a different way of communication */}
+                            <ContactMethod text="Comunícate con un asesor especializado" link="tel:6017461174" gif={phoneIcon} />
+                            <ContactMethod text="Escríbenos por correo electrónico" link="mailto:comunicacionesprecast@cyc-bpo.com" gif={emailIcon} />
                             <ContactMethod
-                                Icon={EmailIcon}
-                                text="Escribenos por correo electronico comunicacionesprecast@cyc-bpo.com"
-                                link="mailto:comunicacionesprecast@cyc-bpo.com"
-                            />
-                            <ContactMethod
-                                Icon={WhatsAppIcon}
-                                text="Si te queda mas facil, contamos con agentes especializados en nuestro canal de WhatsApp"
-                                link="https://api.whatsapp.com/message/6UUK5XMISG6JI1?autoload=1&app_absent=0"
-                            />
-                            <ContactMethod
-                                Icon={LocationOnIcon}
-                                text="Si quieres Conocernos puedes acercarte a nuestras instalaciones"
-                                link="https://www.google.com/maps/place/C%26C+Services+S.A.S./@4.6033324,-74.0684109,15z/data=!4m6!3m5!1s0x8e3f99a3a6d494ff:0x14a75d64ba24d03c!8m2!3d4.6033324!4d-74.0684109!16s%2Fg%2F11fxcdjnbv?entry=ttu"
-                            /> */}
-                            <ContactMethod text="Comunicate con un asesor especializado en Bogota al número 601 - 7461174" link="tel:+16017461174" gif={phoneIcon} />
-                            <ContactMethod
-                                text="Escribenos por correo electronico comunicacionesprecast@cyc-bpo.com"
-                                link="mailto:comunicacionesprecast@cyc-bpo.com"
-                                gif={emailIcon}
-                            />
-                            <ContactMethod
-                                text="Si te queda mas facil, contamos con agentes especializados en nuestro canal de WhatsApp"
+                                text="Si te queda más fácil, contamos con agentes especializados en nuestro canal de WhatsApp"
                                 link="tel:+16017461174"
                                 gif={speechBubble}
                             />
-                            <ContactMethod
-                                text="Si quieres Conocernos puedes acercarte a nuestras instalaciones"
-                                link="https://www.google.com/maps/place/C%26C+Services+S.A.S./@4.6033324,-74.0684109,15z/data=!4m6!3m5!1s0x8e3f99a3a6d494ff:0x14a75d64ba24d03c!8m2!3d4.6033324!4d-74.0684109!16s%2Fg%2F11fxcdjnbv?entry=ttu"
-                                gif={locationIcon}
-                            />
+                            <ContactMethod text="Si quieres conocernos, puedes acercarte a nuestras instalaciones" link={URLS.googleMaps} gif={locationIcon} />
                         </Box>
+                        {/* Payment Channels */}
                         <Box sx={{ py: "3rem" }}>
-                            <Typography sx={{ textAlign: "center", fontSize: "15px" }} variant="subtitle2" component="div" gutterBottom>
-                                Contamos con los siguientes canales de pago para tus productos financieros, para que puedas seguir disfrutando de los beneficios que
-                                Falabella tiene para ti.
+                            <Typography variant="subtitle2" component="div" gutterBottom>
+                                Falabella cuenta con los siguientes canales de pago para tus productos financieros, para que puedas seguir disfrutando de los beneficios
+                                que Falabella tiene para ti.
                             </Typography>
                         </Box>
                         <PaymentChannels paymentChannels={images} />

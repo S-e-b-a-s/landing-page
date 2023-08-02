@@ -10,7 +10,7 @@ const AttributionLink = ({ href, title, children }) => (
 
 const Footer = () => {
     return (
-        <Box sx={{ py: "5rem", display: "flex", flexDirection: "column", gap: "0.2rem" }}>
+        <Box sx={{ py: "5rem", display: "flex", flexDirection: "column", gap: "0.2rem", textAlign: "justify" }}>
             <Typography variant="caption" sx={{ color: "gray" }}>
                 Aviso Legal: El presente mensaje y todo su contenido corresponde a información confidencial, por lo que no puede ser usado ni divulgado por personas
                 diferentes a su destinatario y/o titular de la información. Si usted no es el destinatario o ha recibido este correo por error, equivocación u omisión,
