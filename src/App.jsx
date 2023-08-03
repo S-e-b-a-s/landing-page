@@ -13,20 +13,20 @@ import Footer from "./components/Footer";
 import { URLS } from "./components/constants"; // Import constants for URLs
 
 // Images
-import image3D from "./images/hand3d.png";
-import bancoFalabella from "./images/banco-falabella.png";
-import falabella from "./images/falabella.png";
-import pse from "./images/pse.png";
-import appStore from "./images/app-store.png";
-import googlePlay from "./images/google-play.png";
-import puntoRed from "./images/punto-red.png";
-import falabellaLogo from "./images/falabella-logo.png";
-import cycLogo from "./images/cyc-logo.png";
+import image3D from "./images-webp/hand3d.webp";
+import bancoFalabella from "./images-webp/banco-falabella.webp";
+import falabella from "./images-webp/falabella.webp";
+import pse from "./images-webp/pse.webp";
+import appStore from "./images-webp/app-store.webp";
+import googlePlay from "./images-webp/google-play.webp";
+import puntoRed from "./images-webp/punto-red.webp";
+import falabellaLogo from "./images-webp/falabella-logo.webp";
+import cycLogo from "./images-webp/cyc-logo.webp";
 import phoneIcon from "./images/phone.gif";
 import emailIcon from "./images/email.gif";
 import speechBubble from "./images/speech-bubble.gif";
 import locationIcon from "./images/google-maps.gif";
-import letterX from "./images/cross.png";
+import letterX from "./images-webp/cross.webp";
 
 const theme = createTheme({
     typography: {
@@ -125,7 +125,7 @@ const App = () => {
                             <ContactMethod text="Escríbenos por correo electrónico" link="mailto:comunicacionesprecast@cyc-bpo.com" gif={emailIcon} />
                             <ContactMethod
                                 text="Si te queda más fácil, contamos con agentes especializados en nuestro canal de WhatsApp"
-                                link="tel:+16017461174"
+                                link="https://wa.me/573103157116?text=Buen%20d%C3%ADa%20"
                                 gif={speechBubble}
                             />
                             <ContactMethod text="Si quieres conocernos, puedes acercarte a nuestras instalaciones" link={URLS.googleMaps} gif={locationIcon} />
